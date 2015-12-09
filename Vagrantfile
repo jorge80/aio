@@ -8,8 +8,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 # set to false, if you do NOT want to check the correct VirtualBox Guest Additions version when booting this box
   Vagrant.configure("2") do |config|
-    config.vbguest.auto_update = false
-  end
 # Every Vagrant virtual environment requires a box to build off of.
 # Disable automatic box update checking. If you disable this, then
 # boxes will only be checked for updates when the user runs
@@ -18,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty32"
 # The url from where the 'config.vm.box' box will be fetched if it
 # doesn't already exist on the user's system. 
-  config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-i386-vagrant-disk1.box"
+# config.vm.box_url = "https://atlas.hashicorp.com/ubuntu/boxes/trusty32/versions/20151203.2.0/providers/virtualbox.box"
   
 # Provider-specific configuration so you can fine-tune various
 # backing providers for Vagrant. These expose provider-specific options.
@@ -73,6 +71,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 # So graphical programs may be used from the VM
   config.ssh.forward_x11 = true 
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
-
-  end
 end
